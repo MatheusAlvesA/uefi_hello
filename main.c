@@ -1,17 +1,14 @@
-/** @file HelloWorld.c
- * EFI Hello World application
- **/
 #include <Uefi.h>
 #include <Library/UefiLib.h>
 
 /**
- * Entry point for the application
+ * Ponto de entrada da aplicação EFI
  *
  * @param[in] ImageHandle  The firmware allocated handle for the EFI image
  * @param[in] SystemTable  A pointer to the EFI System Table
  *
- * @retval EFI_SUCCESS  The entry point is executed successufully
- * @retval other        Some error occurs while executing the application
+ * @retval EFI_SUCCESS  O EntryPoint foi executado com sucesso
+ * @retval other        O EntryPoint falhou
  **/
 EFI_STATUS
 EFIAPI
@@ -21,9 +18,7 @@ EntryPoint(
 {
     Print(L"Olá mundo!\n");
 
-    // 10 secs waiting here just to be able of
-    // checking the message before the system
-    // restarts
+    // Aguarde 10 segundos antes de terminar
     SystemTable->BootServices->Stall(10000000);
     return EFI_SUCCESS;
 }

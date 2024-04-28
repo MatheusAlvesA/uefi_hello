@@ -17,7 +17,5 @@ WORKDIR /usr/src/edk2
 RUN git submodule update --init
 RUN make -C BaseTools
 
-ENV APP_ENV testing
-
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
